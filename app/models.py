@@ -52,32 +52,3 @@ class Comment(Base):
     user = relationship("User", back_populates="comments")
     parent = relationship("Comment", remote_side=[id], backref="replies")
 
-
-# class Comment(Base):
-#     __tablename__ = "comments"
-#     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-#     comment_text = Column(String, nullable=False)
-#     movie_id = Column(Integer, ForeignKey("movies.id"), nullable=False)
-#     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
-#     parent_id = Column(Integer, ForeignKey("comments.id"), nullable=True)
-
-#     movie = relationship("Movie", back_populates="comments")
-#     user = relationship("User", back_populates="comments")
-#     parent = relationship("Comment", remote_side=[id], backref="replies")
-
-
-
-
-
-# class Comment(Base):
-#     __tablename__ = "comments"
-
-#     id = Column(Integer, primary_key=True, index=True)
-#     content = Column(String, index=True)
-#     movie_id = Column(Integer, ForeignKey('movies.id'))
-#     user_id = Column(Integer, ForeignKey('users.id'))
-#     parent_id = Column(Integer, ForeignKey('comments.id'), nullable=True)
-
-#     movie = relationship("Movie", back_populates="comments")
-#     user = relationship("User", back_populates="comments")
-#     replies = relationship("Comment", backref=backref("parent", remote_side=[id]), lazy='dynamic')

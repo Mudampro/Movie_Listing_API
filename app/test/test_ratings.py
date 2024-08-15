@@ -382,3 +382,5 @@ def test_delete_rating_not_found(client, setup_db, rating_id):
     )
     assert delete_rating_response.status_code == 404
     assert delete_rating_response.json() == {"detail": "Rating not found or not authorized"}
+
+    

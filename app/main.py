@@ -8,7 +8,6 @@ from app.routers.login import login_router
 from app.routers.comment import comment_router
 
 
-
 models.Base.metadata.create_all(bind=engine)
 
 
@@ -26,4 +25,4 @@ app.include_router(comment_router, prefix="/Comments", tags=["Comments"])
 @app.get("/")
 def Home():
     return {"Success":
-            "Welcome to My Third Semester Capstone Project @ AltSchool Africa"}
+            "Welcome to My Third Semester Capstone Project @ AltSchool Africa (Sunday Moses)"}
